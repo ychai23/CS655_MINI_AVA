@@ -2,10 +2,11 @@ Refer to the blog https://witestlab.poly.edu/blog/adaptive-video-reproducing/ fo
 
 Step 1. Set up GENI
 
-Creat a GENI slice with the Rspec file given in the post.
+Creat a GENI slice with the Rspec file given in the repo.
 Connect to the router and client with ssh commands.
 Download/Clone necessary github repo into the nodes.
-Configure the router as instructed in post. Your command should look something like this: ssh -i ~/.ssh/id_geni_ssh_rsa geni_link -p port_num
+Configure the router/server/client as instructed in post. Your command should look something like this: ssh -i ~/.ssh/id_geni_ssh_rsa geni_link -p port_num
+The bash scripts are also provided in the router.sh, server.sh, client.sh files to run on different nodes.
 
 
 Step 2. Collect Data
