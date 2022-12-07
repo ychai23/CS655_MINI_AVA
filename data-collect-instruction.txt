@@ -1,0 +1,32 @@
+Refer to the blog https://witestlab.poly.edu/blog/adaptive-video-reproducing/ for the full version of how to run the experiement.
+
+Step 1. Set up GENI
+
+Creat a GENI slice with the Rspec file given in the post.
+Connect to the router and client with ssh commands.
+Download/Clone necessary github repo into the nodes.
+Configure the router as instructed in post. Your command should look something like this: ssh -i ~/.ssh/id_geni_ssh_rsa geni_link -p port_num
+
+
+Step 2. Collect Data
+
+Run sample command on client node: 
+
+python2 ./AStream/dist/client/dash_client.py -m http://server/media/BigBuckBunny/4sec/BigBuckBunny_4s.mpd -p 'policy(basic/netflix/sara)' -d
+
+Run sample command on router node:
+
+bash rate-vary.sh ~/Dataset_1/Dataset/Ferry/Ferry5.csv 0.1
+
+
+After around 5mins/longer, you can stop both node by Ctrl-C, the result of the log will be located at ASTREAM_LOGS on client's side.
+
+
+Step 3. Analysis
+
+Download the collected data and arrange them like the data folder for different policies.
+The backbone code are provided, just change the directory of the data file to the right path.
+
+
+
+
